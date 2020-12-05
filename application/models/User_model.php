@@ -14,18 +14,12 @@
   }
 
   // Log user in
-  public function login($username, $password){
-   // Validate
+  public function login($username){
+
+    // Validate
    $this->db->where('username', $username);
-   $this->db->where('password', $password);
 
-   $result = $this->db->get('user');
-
-   if($result->num_rows() == 1){
-    return $result->row(0)->id;
-   } else {
-    return false;
-   }
+   return $result = $this->db->get('user');
   }
 
   // Check username exists

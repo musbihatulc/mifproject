@@ -11,6 +11,52 @@
             </div> -->
             <div class="card-body">
               <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>NIP</th>
+                        <th>Pangkat Gol Rg</th>
+                        <th>Pangkat TMT</th>
+                        <th>Nama Jabatan</th>
+                        <th>Tahun Jabatan</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                      foreach($user as $baris){
+                    ?>
+
+                      <tr>
+                      <td><?php echo $baris->No; ?></td>
+                      <td><?php echo $baris->Nama; ?></td>
+                      <td><?php echo $baris->NIP; ?></td>
+                      <td><?php echo $baris->Pangkat_gol_Rg; ?></td>
+                      <td><?php echo $baris->Pangkat_tmt; ?></td>
+                      <td><?php echo $baris->Nama_Jabatan; ?></td>
+                      <td><?php echo $baris->Th_Jabatan; ?></td>
+                      <td>
+                        <div class="row">
+                          <a href="<?php echo base_url(); ?>Tables/detail/<?php echo $baris->NIP; ?>" class="btn btn-sm btn-success">Detail</a>
+                          <a href="<?php echo base_url(); ?>Tables/edit/<?php echo $baris->NIP; ?>" class="btn btn-sm btn-warning">Edit</a>
+                          <a href="<?php echo base_url(); ?>Tables/hapus/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
+                          <!-- Button trigger modal-->
+                          <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalAbandonedCart">Hapus</button> -->
+                        </div>
+                      </td> 
+                      </tr>
+
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                  <div class="mt-3">
+                      <a href="<?php echo base_url(); ?>Tables/opentambah/" class="btn btn-primary">Tambah</a>
+                      <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Simpan</a>
+                  </div>
+              </div>
+              <!-- <div class="table-responsive data-tables">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
@@ -51,7 +97,7 @@
 
                 <a href="<?php echo base_url(); ?>Tables/opentambah/" class="btn btn-primary">Tambah</a>
                 <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Simpan</a>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -60,3 +106,41 @@
 
       </div>
       <!-- End of Main Content -->
+
+
+<!-- Modal: modalAbandonedCart-->
+<div class="modal fade right" id="modalAbandonedCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h5 class="heading text-danger">Hapus data</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-3">
+            <p></p>
+            <p class="text-center"><i class="text-danger fas fa-trash fa-4x"></i></p>
+          </div>
+
+          <div class="col-9">
+            <p>Apakah anda yakin ingin menghapus data ini?</p>
+            <a href="<?php echo base_url(); ?>Tables/hapus/<?php echo $baris->NIP; ?>" type="button" class="text-secondary btn btn-outline-danger">Hapus</a>
+            <a type="button" class="text-white btn btn-secondary waves-effect" data-dismiss="modal">Tidak</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal: modalAbandonedCart-->

@@ -55,6 +55,24 @@
   <script src="<?= base_url('assets/js/demo/chart-area-demo.js') ?>"></script>
   <script src="<?= base_url('js/demo/chart-pie-demo.js') ?>"></script>
 
+  <!-- Page level plugins -->
+  <script src="<?= base_url('assets/vendor/datatables/jquery.dataTables.min.js"') ?>"></script>
+  <script src="<?= base_url('assets/vendor/datatables/dataTables.bootstrap4.min.js') ?>"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?= base_url('assets/js/demo/datatables-demo.js') ?>"></script>
+
+  <!-- DatePicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+  <script>
+    $("#datepicker").datepicker({
+      format: "yyyy", // Notice the Extra space at the beginning
+      viewMode: "years", 
+      minViewMode: "years"
+      }).on('changeDate', function(e){
+          $(this).datepicker('hide');
+      });
+  </script>
 </body>
 
 </html>

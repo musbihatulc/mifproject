@@ -4,12 +4,11 @@
 <div class="text-center">  
     <h1 class="h4 text-gray-900 mb-4">Tambah User</h1>
 </div>  
-<form action="<?php echo base_url('Tables/tambahkandata') ?>" method="post" class="user"> 
-
-
+<form action="<?php echo base_url('Tables/opentambah') ?>" method="post" class="user"> 
     <div class="form-group">
-    <input type="number" class="form-control form-control-user" id="No" name="No" 
+    <input type="number" class="form-control form-control-user" value="<?php echo set_value('No'); ?>" id="No" name="No" 
     placeholder="No" > 
+    <?php echo form_error('No', '<p class="text-danger mt-2">', '</p>'); ?>
     </div> 
     <div class="form-group">
     <input type="text" class="form-control form-control-user" id="Nama" name="Nama" 

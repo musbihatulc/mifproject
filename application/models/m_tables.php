@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class m_tables extends CI_Model { 
     private $table = "tm_user";
 
+    public function get_where($where){
+        $this->db->order_by('Nama', 'ASC');
+        return $this->db->get_where($this->table, $where);
+    }
+
     public function getAll()
     {
         $this->db->order_by('No', 'ASC');
