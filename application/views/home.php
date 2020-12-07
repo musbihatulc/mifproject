@@ -12,38 +12,14 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tahun Jabatan</div>
-                      <form action="" method="post">
-                      <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="th_jabatan" id="datepicker" />
-                        <div class="input-group-append">
-                            <button class="btn btn-sm btn-outline-primary" type="submit" id="button-addon2">
-                              Search
-                            </button>
-                        </div>
-                      </div>
-                      </form>
-                    </div>
-                    <div class="col-auto ml-3">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                    <div class="card-body pb-3">
+                      <h4 class="card-title font-weight-bold">Tingkat Ijazah Pegawai</h4>
+                      <a href="<?php echo base_url(); ?>C_grafik/tingkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
+                    </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -51,7 +27,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
 
             <!-- Earnings (Monthly) Card Example -->
             <!-- <div class="col-xl-3 col-md-6 mb-4">
@@ -80,13 +56,16 @@
             </div> -->
 
             <!-- Pending Requests Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <!-- Card content -->
+                      <div class="card-body pb-3">
+                      <h4 class="card-title font-weight-bold">Pangkat Golongan Rg</h4>
+                      <a href="<?php echo base_url(); ?>C_grafik/pangkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
+                    </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -94,10 +73,41 @@
                   </div>
                 </div>
               </div>
-            </div> -->
-          </div>
 
-          <!-- Content Row -->
+            </div>
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+      
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tahun Jabatan</div>
+                      <form action="" method="post">
+                      <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="th_jabatan" id="datepicker" />
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-outline-primary" type="submit" id="button-addon2">
+                              Search
+                            </button>
+                        </div>
+                      </div>
+                      </form>
+                    </div>
+                    <div class="col-auto ml-3">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Row -->
 
           <div class="row">
               <?php if (isset($tm_users)) : ?>
@@ -136,9 +146,11 @@
               <?php endif; ?>
           </div>
 
-
-        </div>
-        <!-- /.container-fluid -->
+          <div class="row">
+          <h4 style=text-black>VISI, MISI, DAN TUJUAN KEJAKSAAN NEGERI JEMBER</h4>
+          <p> VISI :
+          Visi Kejaksaan Negeri Jember mengacu pada visi Kejaksaan RI. 
+          Visi adalah suatu pandangan jauh kedepan yang akan mengarahkan kita untuk menuju pada kondisi yang akan dicapai di masa depan. Visi akan diwujudkan oleh seluruh pemangku kepentingan baik di internal Kejaksaan R.I maupaum pemangku kepentingan di luar Kejaksaan R.I </p>
 
       </div>
       <!-- End of Main Content -->

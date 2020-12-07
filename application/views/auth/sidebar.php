@@ -25,20 +25,20 @@
       </li>
 
       
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= base_url('C_grafik') ?>" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
           <span>Grafik</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Grafik Screens:</h6>
-            <a class="collapse-item" href="C_grafik">Grafik Pangkat Gol Rg</a>
-            <a class="collapse-item" href="User/Register">Grafik Tingkat Ijazah</a>
-            <a class="collapse-item" href="User/logout"></a>
-          </div>
+            <a class="collapse-item" href="C_grafik/pangkat">Grafik Pangkat Gol Rg</a>
+            <a class="collapse-item" href="C_grafik/tingkat">Grafik Tingkat Ijazah</a> -->
+            <!-- <a class="collapse-item" href="User/logout"></a> -->
+          <!-- </div>
         </div>
-      </li>
+      </li> -->
       <!-- Divider -->
       <!-- <hr class="sidebar-divider"> -->
 

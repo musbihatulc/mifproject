@@ -11,9 +11,13 @@ Class m_grafik extends CI_Model
         return $this->db->from('tm_user')->get()->result();
     }
 
-    // public function GetPie() {
-    //     $sql ="SELECT Pangkat_gol_Rg AS hasil, COUNT(*) total FROM tm_user GROUP BY Hasil";
-    //     return $this->db->query($sql);
-    // }
+    function grafik_tingkat()
+    {
+        $this->db->group_by('Tkt_ijazah_pend');
+        $this->db->select('Tkt_ijazah_pend');
+        $this->db->select("count(*) as jumlahs");
+        return $this->db->from('tm_user')->get()->result();
+    }
+    
 }
 ?>

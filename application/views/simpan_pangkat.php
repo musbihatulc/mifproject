@@ -8,8 +8,8 @@
 <body>
 <br>
 
-<a href="<?php echo base_url(); ?>Home" class="btn btn-primary">Kembali</a>
-<a href="<?php echo base_url(); ?>C_grafik/simpanpangkat" class="btn btn-primary">Simpan Grafik</a>
+<!-- <a href="<?php echo base_url(); ?>Home" class="btn btn-primary">Kembali</a>
+<a href="<?php echo base_url(); ?>C_grafik/simpanpangkat" class="btn btn-primary">Simpan Grafik</a> -->
 <h1 style="text-align:center">Grafik Jumlah Pangkat Golongan RG</h1>
 <canvas id="myChart"></canvas>
     <?php
@@ -51,6 +51,14 @@
         }
     });
 </script>
+
+<script>
+		 window.print();
+</script>
+
+ <style type="text/css" media="print">
+ @page { size: auto; }
+</style>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Grafik Jumlah Pangkat Golongan RG</title>
+    <title>Grafik Tingkat Ijazah</title>
     <!-- Load file plugin Chart.js -->
     <script src="<?php echo base_url()?>/assets/Chart.js/Chart.min.js"></script>
 </head>
@@ -9,18 +9,18 @@
 <br>
 
 <a href="<?php echo base_url(); ?>Home" class="btn btn-primary">Kembali</a>
-<a href="<?php echo base_url(); ?>C_grafik/simpanpangkat" class="btn btn-primary">Simpan Grafik</a>
-<h1 style="text-align:center">Grafik Jumlah Pangkat Golongan RG</h1>
+<a href="<?php echo base_url(); ?>C_grafik/SimpanIjazah" class="btn btn-success">Simpan</a>
+<h1 style="text-align:center">Grafik Tingkat Ijazah</h1>
 <canvas id="myChart"></canvas>
     <?php
     //Inisialisasi nilai variabel awal
-    $pangkat_gol= "";
+    $tingkat_ijazah= "";
     $jumlah=null;
-    foreach ($hasil as $item)
+    foreach ($total as $buah)
     {
-        $pangkat=$item->Pangkat_gol_Rg;
-        $pangkat_gol .= "'$pangkat'". ", ";
-        $jum=$item->total;
+        $tingkat=$buah->Tkt_ijazah_pend;
+        $tingkat_ijazah .= "'$tingkat'". ", ";
+        $jum=$buah->jumlahs;
         $jumlah .= "$jum". ", ";
     }
     ?>
@@ -31,7 +31,7 @@
         type: 'bar',
         // The data for our dataset
         data: {
-            labels: [<?php echo $pangkat_gol; ?>],
+            labels: [<?php echo $tingkat_ijazah; ?>],
             datasets: [{
                 label:'Grafik',
                 backgroundColor: ['rgb(255, 99, 132)', 'rgba(56, 86, 255, 0.87)', 'rgb(60, 179, 113)','rgb(175, 238, 239)', 'rgb(128, 0, 0)', 'rgb(128, 128, 0)', 'rgb(255, 255, 0)', 'RGB(233, 150, 122)', 'RGB(0, 0, 128)'],

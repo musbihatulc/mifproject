@@ -16,25 +16,46 @@ class C_grafik extends CI_Controller {
 	function index()
 	{
 		$data['user_login'] = $this->user_login;
-		$data['hasil']=$this->m_grafik->grafik();
 		$this->load->view('auth/header.php',$data);
 		$this->load->view('auth/sidebar.php');
 		$this->load->view('auth/topbar.php');
+		$this->load->view('auth/footer.php');
+	}
+
+	function pangkat()
+	{
+		$data['user_login'] = $this->user_login;
+		$data['hasil']=$this->m_grafik->grafik();
+		$this->load->view('auth/header.php',$data);
+		// $this->load->view('auth/sidebar.php');
+		// $this->load->view('auth/topbar.php');
 		$this->load->view('grafik');
 		$this->load->view('auth/footer.php');
 	}
 
-	// function pie()
-	// {
-	// 	foreach($this->m_grafik->GetPie()->result_array() as $row){
-	// 		$data[] = array(
-	// 			'hasil' =>$row['hasil'],
-	// 			'total' =>$row['total']
-	// 		);
-	// 	}
-	// 	// $data['pie_data']=$this->m_grafik->GetPie();
-	// 	// $this->load->view('grafik',$data);
-	// 	echo json_encode($data);
-	// }
+	function simpanpangkat()
+	{
+		$data['hasil'] = $this->m_grafik->grafik();
+        $this->load->view('auth/header.php');
+        $this->load->view('simpan_pangkat', $data);
+	}
+
+	function tingkat()
+	{
+		$data['user_login'] = $this->user_login;
+		$data['total']=$this->m_grafik->grafik_tingkat();
+		$this->load->view('auth/header.php',$data);
+		// $this->load->view('auth/sidebar.php');
+		// $this->load->view('auth/topbar.php');
+		$this->load->view('grafik_ijazah');
+		$this->load->view('auth/footer.php');
+	}
+
+	public function SimpanIjazah()
+    {
+        $data['total'] = $this->m_grafik->grafik_tingkat();
+        $this->load->view('auth/header.php');
+        $this->load->view('simpan_ijazah', $data);
+    }
 }
 ?>
