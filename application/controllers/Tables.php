@@ -75,7 +75,7 @@ class Tables extends CI_Controller {
             // $this->load->view('auth/sidebar.php');
             // $this->load->view('auth/topbar.php');
             $this->load->view('tambah');
-            $this->load->view('auth/footer.php');
+            // $this->load->view('auth/footer.php');
                 
         } else {
             $data = array(

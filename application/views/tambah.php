@@ -1,6 +1,8 @@
-<div class="row"> 
-<div class="col-lg-7"> 
-<div class="p-5"> 
+<div class="col-xl-6 col-md-6 mb-6 bg-success mx-auto d-block"> 
+<div class="col-lg-11 mx-auto d-block"> 
+<div class="p-3 ">
+<div class= "card"> 
+<div class="card-body">
 <div class="text-center">  
     <h1 class="h4 text-gray-900 mb-4">Tambah User</h1>
 </div>  
@@ -96,9 +98,11 @@
     <?php echo form_error('Ctt_prestasi', '<p class="text-danger mt-2">', '</p>'); ?>
     </div> 
 
-            <input type="submit" class="btn btn-success btn-icon-split" name="submit" value="Tambah"> 
+            <input type="submit" class="btn btn-success" name="submit" value="Tambah"> 
             </form><hr> 
-            <div class="text-center"> 
-                <a href="<?php echo base_url('Tables'); ?>" class="small">Kembali</a> 
+            <div class="text-right"> 
+                <a href="<?php echo base_url('Tables'); ?>" class="btn btn-primary">Kembali</a> 
             </div>
             </div></div></div>
+<div>
+</div>

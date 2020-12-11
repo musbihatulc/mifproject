@@ -146,11 +146,38 @@
               <?php endif; ?>
           </div>
 
-          <div class="row">
-          <h4 style=text-black>VISI, MISI, DAN TUJUAN KEJAKSAAN NEGERI JEMBER</h4>
-          <p> VISI :
-          Visi Kejaksaan Negeri Jember mengacu pada visi Kejaksaan RI. 
-          Visi adalah suatu pandangan jauh kedepan yang akan mengarahkan kita untuk menuju pada kondisi yang akan dicapai di masa depan. Visi akan diwujudkan oleh seluruh pemangku kepentingan baik di internal Kejaksaan R.I maupaum pemangku kepentingan di luar Kejaksaan R.I </p>
+          <br>
+          <div>
+              <div class="card shadow h-100 py-2 bg-success">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <!-- Card content -->
+                      <div class="card-body pb-3">
+                      <h4 class="text-white">VISI, MISI, DAN TUJUAN KEJAKSAAN NEGERI JEMBER</h4>
+                      <br>
+                          <p class="text-white"> VISI :
+                          Visi Kejaksaan Negeri Jember mengacu pada visi Kejaksaan RI. 
+                          Visi adalah suatu pandangan jauh kedepan yang akan mengarahkan kita untuk menuju 
+                          pada kondisi yang akan dicapai di masa depan. Visi akan diwujudkan oleh seluruh pemangku kepentingan baik 
+                          di internal Kejaksaan R.I maupaum pemangku kepentingan di luar Kejaksaan R.I </p>                      
+                          <p class="text-white">Visi Kejaksaan R.I. adalah : “MENJADI LEMBAGA PENEGAK HUKUM YANG PROFESIONAL , 
+                          PROPORSIONAL DAN AKUNTABEL” </p>
+                          <br>
+                          <p class="text-white">MISI :
+                          Misi Kejaksaan Negeri Jember mengacu pada Misi Kejaksaan RI. Misi Kejaksaan R.I merupakan penjabaran dari cita-cita dan landasan kerja organisasi serta merupakan fondasi dari perencanaan strategi kejaksaan R.I Tahun 2015-2019.Dengan pernyataan misi diharapkan seluruh entitas Kejaksaan R.I dan para pemangku kepentingan dapat mengenal dan mengetahui peran,program/sasaran kerja serta hasil yang akan diperoleh /dicapai oleh Kejaksaan R.I.
+                          Dalam  rangka tercapainya Visi tersebut,maka Kejaksaan R.I menetapkan Misi tahun 2015-2019 adalaj sebagai berikut:
+                          1. Meningkatkan peran Kejaksaan R.I dalam Program Pencegahan Tindak Pidana;
+                          2. Meningkatkan profesionalisme Jaksa dalam Penanganan Perkara Tindak Pidana;
+                          3. Meningkatkan peran Jaksa Pengacara Negara dalam penyelesaian Masalah Perdata Dan Tata Usaha Negara
+                          4. Mewujudkan upaya Penegakan Hukum yang memenuhi rasa keadilan masyarakat;
+                          5. Mempercepat pelaksanaan Reormasi Birokrasi dan Tata Kelola Kejaksaan RI yang bersih dan bebas KKN
+                          </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
       </div>
       <!-- End of Main Content -->

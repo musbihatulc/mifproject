@@ -33,10 +33,10 @@
 					<input type="number" class="form-control" value="<?php echo $datanya->NIP; ?>" id="NIP" name="NIP">
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="Pangkat_gol_Rg">Pangkat Golongan Rg</label>
-                    <input type="text" value="<?php // echo $user->Pangkat_gol_Rg; ?>" class="form-control" id="Pangkat_gol_Rg" name="Pangkat_gol_Rg">
-                </div>  -->
+                    <input type="text" value="<?php echo $datanya->Pangkat_gol_Rg; ?>" class="form-control" id="Pangkat_gol_Rg" name="Pangkat_gol_Rg">
+                </div> 
 
                 <div class="form-group">
                     <label for="Pangkat_tmt">Pangkat tmt</label>
@@ -50,7 +50,7 @@
 
                 <div class="form-group">
                     <label for="Th_Jabatan">Tahun Jabatan</label>
-                    <input type="text" class="form-control form-control-user" value="<?php // echo $datanya->Th_Jabatan; ?>" id="Th_Jabatan" name="Th_Jabatan"> 
+                    <input type="text" class="form-control form-control-user" value="<?php echo $datanya->Th_Jabatan; ?>" id="Th_Jabatan" name="Th_Jabatan"> 
                 </div> 
 
                 <div class="form-group">
