@@ -17,20 +17,20 @@
             <?php
             foreach($datane as $datanya) {
             ?>
-
+ 
                 <div class="form-group">
 					<label for="No">No</label>
-					<input type="number" value="<?php echo $datanya->No; ?>" class="form-control" id="No" name="No" readonly>
-				</div>
-
-				<div class="form-group">
+					<input type="number" value="<?php echo $datanya->No; ?>" class="form-control" id="No" name="No">
+                </div>
+                
+                <div class="form-group">
 					<label for="Nama">Nama</label>
 					<input type="text" value="<?php echo $datanya->Nama; ?>" class="form-control" id="Nama" name="Nama">
 				</div>
 
                 <div class="form-group">
                     <label for="NIP">NIP</label>
-					<input type="number" class="form-control" value="<?php echo $datanya->NIP; ?>" id="NIP" name="NIP">
+					<input type="number" class="form-control" value="<?php echo $datanya->NIP; ?>" id="NIP" name="NIP" readonly>
                 </div>
 
                 <div class="form-group">
@@ -109,6 +109,9 @@
                 </div> 
 				
 				<button type="submit" class="btn btn-primary">Update</button>
+                <div class="text-right"> 
+                <a href="<?php echo base_url('Tables'); ?>" class="btn btn-primary">Kembali</a> 
+            </div>
                 <?php } ?>
 			</form>
 			</div>

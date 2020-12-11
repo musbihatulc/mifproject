@@ -130,15 +130,46 @@ class Tables extends CI_Controller {
     }
     
     function update(){
-		$No = $this->input->post('No');
+        $No = $this->input->post('No');
         $Nama = $this->input->post('Nama');
         $NIP = $this->input->post('NIP');
+        $Pangkat_gol_Rg = $this->input->post('Pangkat_gol_Rg');
         $Pangkat_tmt = $this->input->post('Pangkat_tmt');
+        $Nama_Jabatan = $this->input->post('Nama_Jabatan');
+        $Th_Jabatan = $this->input->post('Th_Jabatan');
+        $Th_Masa_Kerja = $this->input->post('Th_Masa_Kerja');
+        $Bln_Masa_Kerja = $this->input->post('Bln_Masa_Kerja');
+        $Nama_lt_jabatan = $this->input->post('Nama_lt_jabatan');
+        $Bln_thn_lt_jab = $this->input->post('Bln_thn_lt_jab');
+        $Jml_Jam_lt_jab = $this->input->post('Jml_Jam_lt_jab');
+        $Nama_pend = $this->input->post('Nama_pend');
+        $Th_lulus_pend = $this->input->post('Th_lulus_pend');
+        $Tkt_ijazah_pend = $this->input->post('Tkt_ijazah_pend');
+        $Usia = $this->input->post('Usia');
+        $Ctt_mutasi_kepeg = $this->input->post('Ctt_mutasi_kepeg');
+        $Ctt_prestasi = $this->input->post('Ctt_prestasi');
+
 	  
 		$data = array(
             'No' => $No,
+            'NIP' => $NIP,
             'Nama' => $Nama,
-            'Pangkat_tmt' => $Pangkat_tmt
+            'Pangkat_gol_Rg' => $Pangkat_gol_Rg,
+            'Pangkat_tmt' => $Pangkat_tmt,
+            'Nama_Jabatan' => $Nama_Jabatan,
+            'Th_Jabatan' => $Th_Jabatan,
+            'Th_Masa_Kerja' => $Th_Masa_Kerja,
+            'Bln_Masa_Kerja' => $Bln_Masa_Kerja,
+            'Nama_lt_jabatan' => $Nama_lt_jabatan,
+            'Bln_thn_lt_jab' => $Bln_thn_lt_jab,
+            'Jml_Jam_lt_jab' => $Jml_Jam_lt_jab,
+            'Nama_pend' => $Nama_pend,
+            'Th_lulus_pend' => $Th_lulus_pend,
+            'Tkt_ijazah_pend' => $Tkt_ijazah_pend,
+            'Usia' => $Usia,
+            'Ctt_mutasi_kepeg' => $Ctt_mutasi_kepeg,
+            'Ctt_prestasi' => $Ctt_prestasi
+
 		  
 		  );
 		$where = array(
