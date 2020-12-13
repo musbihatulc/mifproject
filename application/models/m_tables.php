@@ -14,6 +14,12 @@ class m_tables extends CI_Model {
         return $this->db->get($this->table)->result();
     }
 
+    public function hitungNama()
+    {
+        $this->db->like('Nama', '1');
+        $this->db->from('tm_user');
+        echo $this->db->count_all_results();
+    }
 
     public function input_data($data, $table)
     {

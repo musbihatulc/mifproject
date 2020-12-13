@@ -7,8 +7,28 @@
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
 
+         
           <!-- Content Row -->
           <div class="row">
+
+
+          <div class="col-xl-3 col-md-6 mb-4 bg-success">
+              <div class="card border-left-success ">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                    <div class="card-body pb-3">
+                      <h4 class="card-title font-weight-bold">Jumlah Pegawai</h4>
+                      <?php echo $Nama ?>                      
+                    </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user-friends fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -18,11 +38,11 @@
                     <div class="col mr-2">
                     <div class="card-body pb-3">
                       <h4 class="card-title font-weight-bold">Tingkat Ijazah Pegawai</h4>
-                      <a href="<?php echo base_url(); ?>C_grafik/tingkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
+                      <a href="<?php echo base_url(); ?>C_grafik/tingkat/" class="btn btn-primary">Tampilkan Diagram</a>                      
                     </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                      <i class="fas fa-id-card-alt fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
@@ -64,11 +84,11 @@
                       <!-- Card content -->
                       <div class="card-body pb-3">
                       <h4 class="card-title font-weight-bold">Pangkat Golongan Rg</h4>
-                      <a href="<?php echo base_url(); ?>C_grafik/pangkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
+                      <a href="<?php echo base_url(); ?>C_grafik/pangkat/" class="btn btn-primary">Tampilkan Diagram</a>                      
                     </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                      <i class="fas fa-star-half-alt fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>

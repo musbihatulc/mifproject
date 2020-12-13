@@ -33,11 +33,19 @@ class Home extends CI_Controller {
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$data['tm_users'] = $this->m_tables->get_where(["Th_Jabatan" => $this->input->post('th_jabatan')])->result();
 		}
+		
 		$data['user_login'] = $this->user_login;
+		// $data['Nama'] = $this->m_tables->hitungNama();
+		$data['Nama'] = $this->db->from("tm_user")->get()->num_rows();
 		$this->load->view('auth/header.php',$data);
         $this->load->view('auth/sidebar.php');
         $this->load->view('auth/topbar.php');
 		$this->load->view('home');
 		$this->load->view('auth/footer.php');
 	}
+
+	// public function hitungN()
+	// {
+	// 	$data['Nama'] = $this->m_tables->hitungNama();
+	// }
 }

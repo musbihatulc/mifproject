@@ -18,6 +18,8 @@ Class m_grafik extends CI_Model
         $this->db->select("count(*) as jumlahs");
         return $this->db->from('tm_user')->get()->result();
     }
+
+    
     
 }
 ?>
