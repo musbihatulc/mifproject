@@ -38,7 +38,7 @@
                     <div class="col mr-2">
                     <div class="card-body pb-3">
                       <h4 class="card-title font-weight-bold">Tingkat Ijazah Pegawai</h4>
-                      <a href="<?php echo base_url(); ?>C_grafik/tingkat/" class="btn btn-primary">Tampilkan Diagram</a>                      
+                      <a href="<?php echo base_url(); ?>C_grafik/tingkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
                     </div>
                     </div>
                     <div class="col-auto">
@@ -84,7 +84,7 @@
                       <!-- Card content -->
                       <div class="card-body pb-3">
                       <h4 class="card-title font-weight-bold">Pangkat Golongan Rg</h4>
-                      <a href="<?php echo base_url(); ?>C_grafik/pangkat/" class="btn btn-primary">Tampilkan Diagram</a>                      
+                      <a href="<?php echo base_url(); ?>C_grafik/pangkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
                     </div>
                     </div>
                     <div class="col-auto">
