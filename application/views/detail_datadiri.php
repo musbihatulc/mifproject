@@ -81,7 +81,7 @@
                                                 
                                                 <br>
                                                 <div class="text-right">
-                                                    <img src="<?= base_url('assets/img/LOGOKEJARI.png') ?>" width="300px !important" height="400px">
+                                                    <img src="<?= base_url('assets/img/'.$a->Gambar) ?>" width="300px !important" height="400px">
                                                     
                                                 </div>
 

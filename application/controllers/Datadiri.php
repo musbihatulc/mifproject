@@ -94,11 +94,31 @@ class Datadiri extends CI_Controller {
                 'Status' => $this->input->post('Status'),
                 'No_telp' => $this->input->post('No_telp'),
                 'Jenis_kelamin' => $this->input->post('Jenis_kelamin'),
-                'Agama' => $this->input->post('Agama')
+                'Agama' => $this->input->post('Agama'),
+                'Gambar' => $this->_uploadImage()
                 );
             $this->db->insert('data_diri',$data);
             redirect('Datadiri/index');
         }
     }
+    private function _uploadImage()
+    {
+        $config['upload_path']          =  './assets/img';
+        $config['allowed_types']        = 'gif|jpg|png|JPG';
+        $config['max_size']             = 9048;
+        $config['overwrite']            = true;
+        $config['file_name']            = $_FILES['Gambar']['name'];
+        // 1MB
+        // $config['max_width']            = 1024;
+		// $config['max_height']           = 768;
+		$this->upload->initialize($config);
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('Gambar')) {
+            return $this->upload->data("file_name");
+        }
+
+        return "LOGOKEJARI.png";
+	}	
     
 }

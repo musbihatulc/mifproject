@@ -10,7 +10,7 @@
               <h6 class="m-0 font-weight-bold text-primary">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember</h6>
             </div> -->
             <div class="col-md-8" style="margin: 17px">
-            <form action="<?php echo base_url('Datadiri/tambahdiri') ?>" method="post" class="user"> 
+            <form action="<?php echo base_url('Datadiri/tambahdiri') ?>" method="post" enctype="multipart/form-data" class="user"> 
     <div class="form-group">
     <select name="NIP" class="form-control">
         <?php $db = $this->db->query("SELECT tm_user.NIP, tm_user.Nama, tm_user.Nama_Jabatan FROM `tm_user` WHERE tm_user.NIP NOT IN (SELECT data_diri.NIP FROM data_diri)")->result();
@@ -41,14 +41,17 @@
     <?php echo form_error('No_telp', '<p class="text-danger mt-2">', '</p>'); ?>
     </div> 
     <div class="form-group">
-    <input type="text" class="form-control form-control-user" value="<?php echo set_value('Jenis_kelamin'); ?>" id="Jenis_kelamin" name="Jenis_kelamin" 
-    placeholder="Jenis_kelamin"> 
-    <?php echo form_error('Jenis_kelamin', '<p class="text-danger mt-2">', '</p>'); ?>
+    <select name="Jenis_kelamin" class="form-control">
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option>
+    </select>
     </div> 
     <div class="form-group">
     <input type="text" class="form-control form-control-user" value="<?php echo set_value('Agama'); ?>" id="Agama" name="Agama" 
     placeholder="Agama">
     <?php echo form_error('Agama', '<p class="text-danger mt-2">', '</p>'); ?> 
+    <input type="file" class="form-control"  style="margin-top: 10px;" id="Agama" name="Gambar" 
+    >
     </div>  
 
             <input type="submit" class="btn btn-success" name="submit" value="Tambah"> 
