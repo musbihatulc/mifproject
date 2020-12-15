@@ -1,17 +1,16 @@
-<div class="col-xl-6 col-md-6 mb-6 bg-success mx-auto d-block"> 
-<div class="col-lg-11 mx-auto d-block"> 
-<div class="p-3 ">
-<div class= "card"> 
-<div class="card-body">
-<div class="text-center">  
-    <h1 class="h4 text-gray-900 mb-4">Tambah User</h1>
-</div>  
-<form action="<?php echo base_url('Tables/opentambah') ?>" method="post" class="user"> 
-    <div class="form-group">
-    <input type="number" class="form-control form-control-user" value="<?php echo set_value('No'); ?>" id="No" name="No" 
-    placeholder="No" > 
-    <?php echo form_error('No', '<p class="text-danger mt-2">', '</p>'); ?>
-    </div> 
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember</h1>
+          <!-- <p class="mb-4">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember<a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
+            
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <!-- <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember</h6>
+            </div> -->
+            <div class="col-md-8" style="margin: 17px">
+            <form action="<?php echo base_url('Tables/opentambah') ?>" method="post" class="user"> 
     <div class="form-group">
     <input type="text" class="form-control form-control-user" value="<?php echo set_value('Nama'); ?>" id="Nama" name="Nama" 
     placeholder="Nama Maximal 100 Character" >
@@ -99,10 +98,52 @@
     </div> 
 
             <input type="submit" class="btn btn-success" name="submit" value="Tambah"> 
+            <a href="<?php echo base_url('Tables'); ?>" class="btn btn-primary">Kembali</a> 
             </form><hr> 
-            <div class="text-right"> 
-                <a href="<?php echo base_url('Tables'); ?>" class="btn btn-primary">Kembali</a> 
-            </div>
-            </div></div></div>
-<div>
 </div>
+</div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+
+<!-- Modal: modalAbandonedCart-->
+<div class="modal fade right" id="modalAbandonedCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" data-backdrop="false">
+  <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h5 class="heading text-danger">Hapus data</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-3">
+            <p></p>
+            <p class="text-center"><i class="text-danger fas fa-trash fa-4x"></i></p>
+          </div>
+
+          <div class="col-9">
+            <p>Apakah anda yakin ingin menghapus data ini?</p>
+            <a href="<?php echo base_url(); ?>Tables/hapus/<?php echo $baris->NIP; ?>" type="button" class="text-secondary btn btn-outline-danger">Hapus</a>
+            <a type="button" class="text-white btn btn-secondary waves-effect" data-dismiss="modal">Tidak</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal: modalAbandonedCart-->

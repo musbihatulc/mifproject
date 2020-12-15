@@ -16,13 +16,13 @@ class Tables extends CI_Controller {
 
 	public function index()
 	{
-        $data['user_login'] = $this->user_login;
-        $data['user'] = $this->m_tables->getAll();
-		$this->load->view('auth/header.php', $data);
-        $this->load->view('auth/sidebar.php');
-        $this->load->view('auth/topbar.php');
-		$this->load->view('tables');
-		$this->load->view('auth/footer.php');
+            $data['user_login'] = $this->user_login;
+            $data['user'] = $this->m_tables->getAll();
+            $this->load->view('auth/header.php', $data);
+            $this->load->view('auth/sidebar.php');
+            $this->load->view('auth/topbar.php');
+            $this->load->view('tables');
+            $this->load->view('auth/footer.php');
     }
 
     public function simpan()
@@ -71,11 +71,12 @@ class Tables extends CI_Controller {
         $this->form_validation->set_rules('Ctt_mutasi_kepeg','Ctt_mutasi_kepeg','required');
         $this->form_validation->set_rules('Ctt_prestasi','Ctt_prestasi','required');
         if($this->form_validation->run() === FALSE){
-            $this->load->view('auth/header.php');
-            // $this->load->view('auth/sidebar.php');
-            // $this->load->view('auth/topbar.php');
+            $data['user_login'] = $this->user_login;
+            $this->load->view('auth/header.php', $data);
+            $this->load->view('auth/sidebar.php');
+            $this->load->view('auth/topbar.php');
             $this->load->view('tambah');
-            // $this->load->view('auth/footer.php');
+            $this->load->view('auth/footer.php');
                 
         } else {
             $data = array(
