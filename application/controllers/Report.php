@@ -33,8 +33,6 @@ class Report extends CI_Controller
     public function index()
     {
         $data['user_login'] = $this->user_login;
-
-
         $jenis = $this->input->post('jenis');
         $tahun = $this->input->post('tahun');
         $data['report'] = $this->db->query("SELECT * FROM `tm_user`  WHERE `status`='Tidak Aktif'")->result();
@@ -83,18 +81,22 @@ class Report extends CI_Controller
             }
         } else if ($this->input->post('submit2')) {
             if ($jenis == null || $tahun == null) {
+                $data['judul'] = 'Tidak Aktif';
                 $data['report'] = $this->db->query("SELECT * FROM `tm_user`  WHERE `status`='Tidak Aktif'")->result();
                 $this->load->view('auth/header.php');
                 $this->load->view('print', $data);
             } else if ($jenis == 'Aktif' && $tahun != 'All') {
+                $data['judul'] = $jenis;
                 $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND Th_Jabatan BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
                 $this->load->view('auth/header.php');
                 $this->load->view('print', $data);
             } else if ($jenis == 'Tidak Aktif' && $tahun != 'All') {
+                $data['judul'] = $jenis;
                 $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND tgl_mutasi BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
                 $this->load->view('auth/header.php');
                 $this->load->view('print', $data);
             } else if ($tahun == 'All') {
+                $data['judul'] = $jenis;
                 $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis'")->result();
                 $this->load->view('auth/header.php');
                 $this->load->view('print', $data);

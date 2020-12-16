@@ -1,6 +1,7 @@
 
 <!-- Page Heading -->
-<h1 style="text-align:center">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember</h1>
+
+<h1 style="text-align:center">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember yang <?php echo $judul ?></h1>
           <!-- <p class="mb-4">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember<a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
 
 <div class="card-body">
