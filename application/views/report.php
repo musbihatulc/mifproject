@@ -14,15 +14,14 @@
                 <div class="col-md-6" style="margin-bottom: 10px;">
                     <form action="<?= base_url('Report'); ?>" method="post">
                     <select name="jenis" class="form-control col-md-3 d-inline">
-                        <option value="2">Mutasi</option>
-                        <option value="1">Masuk</option>
+                        <option value="Tidak Aktif">Mutasi</option>
+                        <option value="Aktif">Masuk</option>
                     </select>
                     <select name="tahun" class="form-control col-md-3 d-inline">
                         <option value="All">Semua</option>
-                        <option value="1">1 Tahun Terakhir</option>
+                        <option value="3">3 Tahun Terakhir</option>
                         <option value="5">5 Tahun Terakhir</option>
                         <option value="10">10 Tahun Terakhir</option>
-                        
                     </select>
                     <button class="btn btn-info" type="submit">Filter</button>
                     </form>
@@ -58,11 +57,11 @@
                       <td><?php echo $baris->Th_Jabatan; ?></td>
                       <td>
                         <div class="row">
-                          <a href="<?php echo base_url(); ?>Tables/detail/<?php echo $baris->NIP; ?>" class="btn btn-sm btn-success">Detail</a>
-                          <a href="<?php echo base_url(); ?>Tables/edit/<?php echo $baris->NIP; ?>" class="btn btn-sm btn-warning">Edit</a>
-                          <a href="<?php echo base_url(); ?>Tables/hapus/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
-                          <!-- Button trigger modal-->
-                          <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalAbandonedCart">Hapus</button> -->
+                            <?php if($baris->status == 'Tidak Aktif'){  ?>
+                          <a href="<?php echo base_url(); ?>Tables/restore/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Restore</a>
+                          <?php }else{ ?>
+                            <p>Data Aktif</p>
+                            <?php } ?>
                         </div>
                       </td> 
                       </tr>

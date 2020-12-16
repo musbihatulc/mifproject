@@ -32,10 +32,11 @@ class Tables extends CI_Controller {
         $this->load->view('simpan', $data);
     }
 
-    public function status(){
+    public function mutasi(){
         $id = $this->uri->segment(3);
         $status = 'Tidak Aktif';
-        $this->m_tables->status($id,$status);
+        $tgl = date('Y-m-d');
+        $this->m_tables->status($id,$status,$tgl);
         redirect('Tables');
     }
 

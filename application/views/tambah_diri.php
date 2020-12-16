@@ -31,9 +31,9 @@
     <?php echo form_error('TTL', '<p class="text-danger mt-2">', '</p>'); ?>
     </div>
     <div class="form-group">
-    <input type="text" class="form-control form-control-user" value="<?php echo set_value('Status'); ?>" id="Status" name="Status" 
+    <input type="text" class="form-control form-control-user" value="<?php echo set_value('Status_pernikahan'); ?>" id="Status_pernikahan" name="Status_pernikahan" 
     placeholder="Status"> 
-    <?php echo form_error('Status', '<p class="text-danger mt-2">', '</p>'); ?>
+    <?php echo form_error('Status_pernikahan', '<p class="text-danger mt-2">', '</p>'); ?>
     </div> 
     <div class="form-group">
     <input type="text" class="form-control form-control-user" value="<?php echo set_value('No_telp'); ?>" id="No_telp" name="No_telp" 

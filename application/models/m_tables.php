@@ -7,12 +7,14 @@ class m_tables extends CI_Model {
         $this->db->order_by('Nama', 'ASC');
         return $this->db->get_where($this->table, $where);
     }
-    function status($id,$status){
-		$query = $this->db->query("UPDATE `tm_user` SET `status`='$status' WHERE NIP='$id'");
+    function status($id,$status,$tgl){
+		$query = $this->db->query("UPDATE `tm_user` SET `status`='$status', `Tgl_mutasi`='$tgl' WHERE NIP='$id'");
 	}
-
     public function getAll()
     {
+        $this->db->join('golongan','tm_user.Pangkat_gol_Rg=golongan.golongan');
+        $this->db->where('status=','Aktif');
+        $this->db->order_by('golongan.id', 'DESC');
         return $this->db->get($this->table)->result();
     }
 
@@ -51,11 +53,6 @@ class m_tables extends CI_Model {
             'NIP' => $id
         ])->result_array();
     }
-    public function usia($from,$to){
-        $this->db->where('Usia BETWEEN '.$from.' AND '.$to);
-        $this->db->from('tm_user');
-        return $this->db->get();
-    } 
 
     public function hapusdata($id){
         $this->db->where('NIP' , $id);

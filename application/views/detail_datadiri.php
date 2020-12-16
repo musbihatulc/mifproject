@@ -47,7 +47,7 @@
                                                 <div class="form-group2 row">
                                                     <label for="lname" class="col-sm-6 col-xs-5 col-md-6  control-label col-form-label">5. Status</label>
                                                     <div class="col-sm-6 col-md-6 col-xs-4">
-                                                        <label for="fname" class=" control-label col-form-label">: <?= $a->Status ?></label>
+                                                        <label for="fname" class=" control-label col-form-label">: <?= $a->Status_pernikahan ?></label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group2 row">

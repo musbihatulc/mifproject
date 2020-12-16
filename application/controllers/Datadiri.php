@@ -84,7 +84,7 @@ class Datadiri extends CI_Controller {
         $this->form_validation->set_rules('NIP','NIP','required');
         $this->form_validation->set_rules('Alamat','Alamat','required');
         $this->form_validation->set_rules('TTL','TTL','required');
-        $this->form_validation->set_rules('Status','Status','required');
+        $this->form_validation->set_rules('Status_pernikahan','Status_pernikahan','required');
         $this->form_validation->set_rules('No_telp','No_telp','required');
         $this->form_validation->set_rules('Jenis_kelamin','Jenis_kelamin','required');
         $this->form_validation->set_rules('Agama','Agama','required');
@@ -101,7 +101,7 @@ class Datadiri extends CI_Controller {
                 'NIP' => $this->input->post('NIP'),
                 'Alamat' => $this->input->post('Alamat'),
                 'TTL' => $this->input->post('TTL'),
-                'Status' => $this->input->post('Status'),
+                'Status_pernikahan' => $this->input->post('Status_pernikahan'),
                 'No_telp' => $this->input->post('No_telp'),
                 'Jenis_kelamin' => $this->input->post('Jenis_kelamin'),
                 'Agama' => $this->input->post('Agama'),
@@ -123,11 +123,9 @@ class Datadiri extends CI_Controller {
 		// $config['max_height']           = 768;
 		$this->upload->initialize($config);
         $this->load->library('upload', $config);
-
         if ($this->upload->do_upload('Gambar')) {
             return $this->upload->data("file_name");
         }
-
         return "LOGOKEJARI.png";
 	}	
     
