@@ -25,7 +25,7 @@
                 
                 <div class="form-group">
 					<label for="Nama">Nama</label>
-					<input type="text" value="<?php echo $datanya->Nama; ?>" class="form-control" id="Nama" name="Nama">
+					<input type="text" value="<?php echo $datanya->Nama; ?>" class="form-control" id="Nama" name="Nama" required>
 				</div>
 
                 <div class="form-group">

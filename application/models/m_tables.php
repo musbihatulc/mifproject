@@ -10,7 +10,6 @@ class m_tables extends CI_Model {
 
     public function getAll()
     {
-        $this->db->order_by('No', 'ASC');
         return $this->db->get($this->table)->result();
     }
 

@@ -26,11 +26,12 @@
                     </thead>
                     <tbody>
                     <?php
+                    $no=1;
                       foreach($user as $baris){
                     ?>
 
                       <tr>
-                      <td><?php echo $baris->No; ?></td>
+                      <td><?php echo $no++; ?> </td>
                       <td><?php echo $baris->Nama; ?></td>
                       <td><?php echo $baris->NIP; ?></td>
                       <td><?php echo $baris->Pangkat_gol_Rg; ?></td>
