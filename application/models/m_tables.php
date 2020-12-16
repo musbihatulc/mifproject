@@ -25,6 +25,12 @@ class m_tables extends CI_Model {
         echo $this->db->count_all_results();
     }
 
+    public function usia($from,$to){
+        $this->db->where('Usia BETWEEN '.$from.' AND '.$to);
+        $this->db->from('tm_user');
+        return $this->db->get();
+    }
+
     public function input_data($data, $table)
     {
         $this->db->insert($table, $data);
