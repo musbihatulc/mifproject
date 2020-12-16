@@ -2,14 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class m_tables extends CI_Model { 
     private $table = "tm_user";
-
+    
     public function get_where($where){
         $this->db->order_by('Nama', 'ASC');
         return $this->db->get_where($this->table, $where);
     }
+    function status($id,$status){
+		$query = $this->db->query("UPDATE `tm_user` SET `status`='$status' WHERE NIP='$id'");
+	}
 
     public function getAll()
     {
+        $this->db->join('golongan','tm_user.Pangkat_gol_Rg=golongan.golongan');
+       // $this->db->where('status=','Aktif');
+        $this->db->order_by('golongan.id', 'DESC');
         return $this->db->get($this->table)->result();
     }
 
@@ -63,6 +69,7 @@ class m_tables extends CI_Model {
     $this->db->where($where);
     $this->db->update($table, $data); 
     }
+    
     
  }
 ?> 

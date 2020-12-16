@@ -32,6 +32,13 @@ class Tables extends CI_Controller {
         $this->load->view('simpan', $data);
     }
 
+    public function status(){
+        $id = $this->uri->segment(3);
+        $status = 'Tidak Aktif';
+        $this->m_tables->status($id,$status);
+        redirect('Tables');
+    }
+
     public function Tampilsimpan()
     {
         $data['user'] = $this->m_tables->getAll();
@@ -70,6 +77,8 @@ class Tables extends CI_Controller {
         $this->form_validation->set_rules('Usia','Usia','required');
         $this->form_validation->set_rules('Ctt_mutasi_kepeg','Ctt_mutasi_kepeg','required');
         $this->form_validation->set_rules('Ctt_prestasi','Ctt_prestasi','required');
+        $this->form_validation->set_rules('Status','Status','required');
+        $this->form_validation->set_rules('Tgl_mutasi','Tgl_mutasi');
         if($this->form_validation->run() === FALSE){
             $data['user_login'] = $this->user_login;
             $this->load->view('auth/header.php', $data);
@@ -97,7 +106,9 @@ class Tables extends CI_Controller {
                 'Tkt_ijazah_pend' => $this->input->post('Tkt_ijazah_pend'),
                 'Usia' => $this->input->post('Usia'),
                 'Ctt_mutasi_kepeg' => $this->input->post('Ctt_mutasi_kepeg'),
-                'Ctt_prestasi' => $this->input->post('Ctt_prestasi')
+                'Ctt_prestasi' => $this->input->post('Ctt_prestasi'),
+                'status' => $this->input->post('status'),
+                'Tgl_mutasi' => $this->input->post('Tgl_mutasi')
                 );
             $this->m_tables->insertdata($data,'tm_user');
             redirect('Tables/index');
