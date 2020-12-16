@@ -74,16 +74,18 @@ class Datadiri extends CI_Controller {
             $this->m_datadiri->update($NIP);
             echo "<script>
 	                alert('Edit Data Diri berhasil');	
-	                window.location.href = '".base_url('Report')."';
+	                window.location.href = '".base_url('Datadiri')."';
 				</script>";//Url tujuan
         }
 	}
 
-   public function editdiri($NIP){
-        $data["dataku"] = $this->m_datadiri->update($NIP)->result();
-        $this->load->view('auth/header.php');
-        // $this->load->view('auth/sidebar.php');
-        // $this->load->view('auth/topbar.php');
+   public function editdiri(){
+    $data['user_login'] = $this->user_login;
+       $id = $this->uri->segment(3);
+        $data["dataku"] = $this->db->query("SELECT * FROM data_diri WHERE NIP='$id'")->result();
+        $this->load->view('auth/header.php',$data);
+        $this->load->view('auth/sidebar.php');
+        $this->load->view('auth/topbar.php');
 		$this->load->view('edit_diri', $data);
 		$this->load->view('auth/footer.php');
     }

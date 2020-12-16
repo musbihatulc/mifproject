@@ -45,7 +45,7 @@ class m_datadiri extends CI_Model{
 function update($NIP)
 {
     $post = $this->input->post();
-    $this->NIP = $post['NIP'];;
+    $this->NIP = $post['NIP'];
     $this->Alamat =$post['Alamat'];
     $this->TTL = $post['TTL'];
     $this->Status_pernikahan = $post['Status_pernikahan'];
@@ -65,18 +65,18 @@ function update($NIP)
 }
 private function _uploadImage()
 {
-    $config['upload_path']          =  './assets/images/depan/';
+    $config['upload_path']          =  './assets/img/';
     $config['allowed_types']        = 'gif|jpg|png|JPG';
     $config['max_size']             = 9048;
     $config['overwrite']            = true;
-    $config['file_name']            = $_FILES['filefoto']['name'];
+    $config['file_name']            = $_FILES['Gambar']['name'];
     // 1MB
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
     $this->upload->initialize($config);
     $this->load->library('upload', $config);
 
-    if ($this->upload->do_upload('filefoto')) {
+    if ($this->upload->do_upload('Gambar')) {
         return $this->upload->data("file_name");
     }
 
