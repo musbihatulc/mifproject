@@ -9,7 +9,25 @@
             <!-- <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Data Urut Kepangkatan Pegawai Negeri Sipil Kejaksaan Negeri Jember</h6>
             </div> -->
+            
             <div class="card-body">
+                <div class="col-md-6" style="margin-bottom: 10px;">
+                    <form action="<?= base_url('Report'); ?>" method="post">
+                    <select name="jenis" class="form-control col-md-3 d-inline">
+                        <option value="2">Mutasi</option>
+                        <option value="1">Masuk</option>
+                    </select>
+                    <select name="tahun" class="form-control col-md-3 d-inline">
+                        <option value="All">Semua</option>
+                        <option value="1">1 Tahun Terakhir</option>
+                        <option value="5">5 Tahun Terakhir</option>
+                        <option value="10">10 Tahun Terakhir</option>
+                        
+                    </select>
+                    <button class="btn btn-info" type="submit">Filter</button>
+                    </form>
+
+                </div>
               <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -27,7 +45,7 @@
                     <tbody>
                     <?php
                     $no=1;
-                      foreach($user as $baris){
+                      foreach($report as $baris){
                     ?>
 
                       <tr>
@@ -42,7 +60,7 @@
                         <div class="row">
                           <a href="<?php echo base_url(); ?>Tables/detail/<?php echo $baris->NIP; ?>" class="btn btn-sm btn-success">Detail</a>
                           <a href="<?php echo base_url(); ?>Tables/edit/<?php echo $baris->NIP; ?>" class="btn btn-sm btn-warning">Edit</a>
-                          <a href="<?php echo base_url(); ?>Tables/mutasi/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin melakukan mutasi?')">Mutasi</a>
+                          <a href="<?php echo base_url(); ?>Tables/hapus/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                           <!-- Button trigger modal-->
                           <!-- <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalAbandonedCart">Hapus</button> -->
                         </div>
@@ -54,54 +72,13 @@
                   </table>
                   <div class="mt-3">
                       <a href="<?php echo base_url(); ?>Tables/opentambah/" class="btn btn-primary">Tambah</a>
-                      <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Lihat Semua Data</a>
+                      <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Simpan</a>
                   </div>
               </div>
-              <!-- <div class="table-responsive data-tables">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>NIP</th>
-                      <th>Pangkat Gol Rg</th>
-                      <th>Pangkat TMT</th>
-                      <th>Nama Jabatan</th>
-                      <th>Tahun Jabatan</th>
-                      <th>Aksi</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <?php
-                    foreach($user as $baris){
-                  ?>
+          
+           
 
-                    <tr>
-                    <td><?php echo $baris->No; ?></td>
-                    <td><?php echo $baris->Nama; ?></td>
-                    <td><?php echo $baris->NIP; ?></td>
-                    <td><?php echo $baris->Pangkat_gol_Rg; ?></td>
-                    <td><?php echo $baris->Pangkat_tmt; ?></td>
-                    <td><?php echo $baris->Nama_Jabatan; ?></td>
-                    <td><?php echo $baris->Th_Jabatan; ?></td>
-                    <td> <a href="<?php echo base_url(); ?>Tables/detail/<?php echo $baris->NIP; ?>" class="btn btn-success">Detail</a>
-                      <a href="<?php echo base_url(); ?>Tables/edit/<?php echo $baris->NIP; ?>" class="btn btn-warning">Edit</a>
-                    <a href="<?php echo base_url(); ?>Tables/hapus/<?php echo $baris->NIP; ?>" class="btn btn-danger">Hapus</a>
-
-
-                    </td> 
-                    </tr>
-
-                    <?php } ?>
-                  </tbody>
-                </table>
-
-                <a href="<?php echo base_url(); ?>Tables/opentambah/" class="btn btn-primary">Tambah</a>
-                <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Simpan</a>
-              </div> -->
-            </div>
-          </div>
-
+                    </div>
         </div>
         <!-- /.container-fluid -->
 

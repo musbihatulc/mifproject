@@ -23,6 +23,7 @@ class Datadiri extends CI_Controller {
         parent::__construct();
 		$this->load->model('user_model');
 		$this->load->model('m_tables');
+		$this->load->model('m_datadiri');
         $this->user_login = $this->user_model->login($this->session->userdata('username'))->row();
         // Cek apakah sudah logout jika iya direct ke login
         has_logout();
@@ -68,6 +69,15 @@ class Datadiri extends CI_Controller {
 		$this->load->view('tambah_diri');
 		$this->load->view('auth/footer.php');
     }
+    public function edit($NIP = null){
+		if ($this->input->post('submit')) {
+            $this->m_datadiri->update($NIP);
+            echo "<script>
+	                alert('Edit Data Diri berhasil');	
+	                window.location.href = '".base_url('Report')."';
+				</script>";//Url tujuan
+        }
+	}
 
     public function tambahdiri()
     {
