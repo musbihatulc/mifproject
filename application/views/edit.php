@@ -17,11 +17,6 @@
             <?php
             foreach($datane as $datanya) {
             ?>
- 
-                <div class="form-group">
-					<label for="No">No</label>
-					<input type="number" value="<?php echo $datanya->No; ?>" class="form-control" id="No" name="No">
-                </div>
                 
                 <div class="form-group">
 					<label for="Nama">Nama</label>

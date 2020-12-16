@@ -151,7 +151,6 @@ class Tables extends CI_Controller {
     }
     
     function update(){
-        $No = $this->input->post('No');
         $Nama = $this->input->post('Nama');
         $NIP = $this->input->post('NIP');
         $Pangkat_gol_Rg = $this->input->post('Pangkat_gol_Rg');
@@ -172,7 +171,6 @@ class Tables extends CI_Controller {
 
 	  
 		$data = array(
-            'No' => $No,
             'NIP' => $NIP,
             'Nama' => $Nama,
             'Pangkat_gol_Rg' => $Pangkat_gol_Rg,
