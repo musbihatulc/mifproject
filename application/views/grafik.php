@@ -105,6 +105,7 @@
     });
 </script>
 
+<<<<<<< HEAD
 <!-- <script>
 		 window.print();
 </script>
@@ -112,3 +113,8 @@
  <style type="text/css" media="print">
  @page { size: auto; }
 </style> -->
+=======
+</div>
+</body>
+</html>
+>>>>>>> 1cf3193827b7238f0d3df2048db3103f02a49e42
