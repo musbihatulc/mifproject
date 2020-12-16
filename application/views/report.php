@@ -12,7 +12,7 @@
             
             <div class="card-body">
                 <div class="col-md-6" style="margin-bottom: 10px;">
-                    <form action="<?= base_url('Report'); ?>" method="post">
+                    <form action="<?= base_url('Report/filter'); ?>" method="post">
                     <select name="jenis" class="form-control col-md-3 d-inline">
                         <option value="Tidak Aktif">Mutasi</option>
                         <option value="Aktif">Masuk</option>
@@ -23,7 +23,8 @@
                         <option value="5">5 Tahun Terakhir</option>
                         <option value="10">10 Tahun Terakhir</option>
                     </select>
-                    <button class="btn btn-info" type="submit">Filter</button>
+                    <input name="submit" class="btn btn-info" value="Filter" type="submit"/>
+                    <input name="submit2" class="btn btn-info" value="Print" type="submit"/>
                     </form>
 
                 </div>
@@ -69,10 +70,7 @@
                       <?php } ?>
                     </tbody>
                   </table>
-                  <div class="mt-3">
-                      <a href="<?php echo base_url(); ?>Tables/opentambah/" class="btn btn-primary">Tambah</a>
-                      <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Simpan</a>
-                  </div>
+                  
               </div>
           
            

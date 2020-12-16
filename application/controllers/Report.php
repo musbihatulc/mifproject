@@ -37,35 +37,68 @@ class Report extends CI_Controller
 
         $jenis = $this->input->post('jenis');
         $tahun = $this->input->post('tahun');
+        $data['report'] = $this->db->query("SELECT * FROM `tm_user`  WHERE `status`='Tidak Aktif'")->result();
+        $this->load->view('auth/header.php', $data);
+        $this->load->view('auth/sidebar.php');
+        $this->load->view('auth/topbar.php');
+        $this->load->view('report', $data);
+        $this->load->view('auth/footer.php');
+       
+    }
+    public function filter(){
+        $data['user_login'] = $this->user_login;
 
-        if ($jenis == null || $tahun == null) {
-            $data['report'] = $this->db->query("SELECT * FROM `tm_user`  WHERE `status`='Tidak Aktif'")->result();
-            $this->load->view('auth/header.php', $data);
-            $this->load->view('auth/sidebar.php');
-            $this->load->view('auth/topbar.php');
-            $this->load->view('report', $data);
-            $this->load->view('auth/footer.php');
-        } else if ($jenis == 'Aktif' && $tahun != 'All') {
-            $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND Th_Jabatan BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
-            $this->load->view('auth/header.php', $data);
-            $this->load->view('auth/sidebar.php');
-            $this->load->view('auth/topbar.php');
-            $this->load->view('report', $data);
-            $this->load->view('auth/footer.php');
-        } else if ($jenis == 'Tidak Aktif' && $tahun != 'All') {
-            $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND tgl_mutasi BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
-            $this->load->view('auth/header.php', $data);
-            $this->load->view('auth/sidebar.php');
-            $this->load->view('auth/topbar.php');
-            $this->load->view('report', $data);
-            $this->load->view('auth/footer.php');
-        } else if ($tahun == 'All') {
-            $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis'")->result();
-            $this->load->view('auth/header.php', $data);
-            $this->load->view('auth/sidebar.php');
-            $this->load->view('auth/topbar.php');
-            $this->load->view('report', $data);
-            $this->load->view('auth/footer.php');
+
+        $jenis = $this->input->post('jenis');
+        $tahun = $this->input->post('tahun');
+        if ($this->input->post('submit')) {
+            if ($jenis == null || $tahun == null) {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user`  WHERE `status`='Tidak Aktif'")->result();
+                $this->load->view('auth/header.php', $data);
+                $this->load->view('auth/sidebar.php');
+                $this->load->view('auth/topbar.php');
+                $this->load->view('report', $data);
+                $this->load->view('auth/footer.php');
+            } else if ($jenis == 'Aktif' && $tahun != 'All') {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND Th_Jabatan BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
+                $this->load->view('auth/header.php', $data);
+                $this->load->view('auth/sidebar.php');
+                $this->load->view('auth/topbar.php');
+                $this->load->view('report', $data);
+                $this->load->view('auth/footer.php');
+            } else if ($jenis == 'Tidak Aktif' && $tahun != 'All') {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND tgl_mutasi BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
+                $this->load->view('auth/header.php', $data);
+                $this->load->view('auth/sidebar.php');
+                $this->load->view('auth/topbar.php');
+                $this->load->view('report', $data);
+                $this->load->view('auth/footer.php');
+            } else if ($tahun == 'All') {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis'")->result();
+                $this->load->view('auth/header.php', $data);
+                $this->load->view('auth/sidebar.php');
+                $this->load->view('auth/topbar.php');
+                $this->load->view('report', $data);
+                $this->load->view('auth/footer.php');
+            }
+        } else if ($this->input->post('submit2')) {
+            if ($jenis == null || $tahun == null) {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user`  WHERE `status`='Tidak Aktif'")->result();
+                $this->load->view('auth/header.php');
+                $this->load->view('print', $data);
+            } else if ($jenis == 'Aktif' && $tahun != 'All') {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND Th_Jabatan BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
+                $this->load->view('auth/header.php');
+                $this->load->view('print', $data);
+            } else if ($jenis == 'Tidak Aktif' && $tahun != 'All') {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis' AND tgl_mutasi BETWEEN DATE(NOW()) - INTERVAL '$tahun' YEAR AND DATE(NOW())")->result();
+                $this->load->view('auth/header.php');
+                $this->load->view('print', $data);
+            } else if ($tahun == 'All') {
+                $data['report'] = $this->db->query("SELECT * FROM `tm_user` WHERE `status`='$jenis'")->result();
+                $this->load->view('auth/header.php');
+                $this->load->view('print', $data);
+            }
         }
     }
 
