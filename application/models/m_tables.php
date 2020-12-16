@@ -13,9 +13,6 @@ class m_tables extends CI_Model {
 
     public function getAll()
     {
-        $this->db->join('golongan','tm_user.Pangkat_gol_Rg=golongan.golongan');
-       // $this->db->where('status=','Aktif');
-        $this->db->order_by('golongan.id', 'DESC');
         return $this->db->get($this->table)->result();
     }
 
