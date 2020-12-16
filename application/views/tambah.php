@@ -95,6 +95,7 @@
     <input type="text" class="form-control form-control-user" value="<?php echo set_value('Ctt_prestasi'); ?>" id="Ctt_prestasi" name="Ctt_prestasi" 
     placeholder="Ctt_prestasi Maximal 30 Character"> 
     <?php echo form_error('Ctt_prestasi', '<p class="text-danger mt-2">', '</p>'); ?>
+    <input type="hidden" name="Status" value="Aktif">
     </div> 
 
             <input type="submit" class="btn btn-success" name="submit" value="Tambah"> 
