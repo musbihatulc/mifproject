@@ -79,6 +79,14 @@ class Datadiri extends CI_Controller {
         }
 	}
 
+   public function editdiri($NIP){
+        $data["dataku"] = $this->m_datadiri->update($NIP)->result();
+        $this->load->view('auth/header.php');
+        // $this->load->view('auth/sidebar.php');
+        // $this->load->view('auth/topbar.php');
+		$this->load->view('edit_diri', $data);
+		$this->load->view('auth/footer.php');
+    }
     public function tambahdiri()
     {
         $this->form_validation->set_rules('NIP','NIP','required');

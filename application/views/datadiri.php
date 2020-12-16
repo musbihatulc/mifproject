@@ -19,7 +19,7 @@
         <h4 class="card-text"><?= $s->NIP ?></h4p>
         <h5 class="card-text"><?= $s->Nama_Jabatan ?></h5>
         <a href="<?= base_url('Datadiri/detail/'.$s->NIP) ?>" class="btn btn-primary">Detail</a>
-        <a href="<?= base_url('Datadiri/edit/'.$s->NIP) ?>" class="btn btn-warning">Edit</a>
+        <a href="<?= base_url('Datadiri/editdiri/'.$s->NIP) ?>" class="btn btn-warning">Edit</a>
         <a href="<?= base_url('Datadiri/hapus/'.$s->NIP) ?>" class="btn btn-danger">Hapus</a>
       </div>
     </div>
