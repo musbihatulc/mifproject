@@ -7,7 +7,7 @@
 </head>
 <body>
 <br>
-
+<div class="card-body" style="max-width: 1500px;">
 <!-- <a href="<?php echo base_url(); ?>Home" class="btn btn-primary">Kembali</a>
 <a href="<?php echo base_url(); ?>C_grafik/simpanpangkat" class="btn btn-primary">Simpan Grafik</a> -->
 <h1 style="text-align:center">Grafik Jumlah Pangkat Golongan RG</h1>
@@ -59,6 +59,6 @@
  <style type="text/css" media="print">
  @page { size: auto; }
 </style>
-
+</div>
 </body>
 </html>
