@@ -31,7 +31,7 @@ class Datadiri extends CI_Controller {
 
     public function index() {
         $data['user_login'] = $this->user_login;
-        $data['user'] = $this->db->query("SELECT * FROM `tm_user` WHERE tm_user.NIP NOT IN (SELECT data_diri.NIP FROM data_diri)")->result();
+        $data['user'] = $this->db->query("SELECT * FROM `tm_user` WHERE tm_user.NIP IN (SELECT data_diri.NIP FROM data_diri)")->result();
 		$this->load->view('auth/header.php', $data);
         $this->load->view('auth/sidebar.php');
         $this->load->view('auth/topbar.php');
