@@ -50,7 +50,12 @@ class Tables extends CI_Controller {
     public function detail($id)
     {
         $data['user_login'] = $this->user_login;
-        $data['detail'] = $this->m_tables->detail($id);
+        $as = $this->db->query("SELECT * FROM data_diri WHERE NIP='$id'")->num_rows();
+        if($as != 0){
+            $data['detail'] = $this->m_tables->detail($id);
+        }else{
+            $data['detail'] = $this->m_tables->detail2($id);
+        }
 		$this->load->view('auth/header.php', $data);
         $this->load->view('auth/sidebar.php');
         $this->load->view('auth/topbar.php');

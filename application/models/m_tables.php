@@ -61,6 +61,12 @@ class m_tables extends CI_Model {
             'tm_user.NIP' => $id
         ])->result_array();
     }
+    public function detail2($id){
+      
+        return $this->db->get_where("tm_user" , [
+            'NIP' => $id
+        ])->result_array();
+    }
 
     public function hapusdata($id){
         $this->db->where('NIP' , $id);

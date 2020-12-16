@@ -175,6 +175,10 @@
                 <?= $detail['Ctt_prestasi']?></p>
             </td>
         </tr>
+        <?php
+            $id = $detail['NIP'];
+            $as = $this->db->query("SELECT * FROM data_diri WHERE NIP='$id'")->num_rows();
+            if($as != 0){ ?>
         <tr>
         <td width="200">
                 Gambar
@@ -184,6 +188,7 @@
                 <img width="300" height="300" src="<?= base_url('assets/img/'. $detail['Gambar']) ?>" alt="">
             </td>
         </tr>
+        <?php } ?>
         <?php endforeach;?>
     </table>
     <div class="row"> 
