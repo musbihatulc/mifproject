@@ -10,6 +10,9 @@ class m_tables extends CI_Model {
     function status($id,$status,$tgl){
 		$query = $this->db->query("UPDATE `tm_user` SET `status`='$status', `Tgl_mutasi`='$tgl' WHERE NIP='$id'");
 	}
+    function status2($id,$status,$tgl){
+		$query = $this->db->query("UPDATE `tm_user` SET `status`='$status', `Tgl_mutasi`='$tgl' WHERE NIP='$id'");
+	}
     public function getAll()
     {
         $this->db->join('golongan','tm_user.Pangkat_gol_Rg=golongan.golongan');

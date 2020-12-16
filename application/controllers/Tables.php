@@ -39,6 +39,13 @@ class Tables extends CI_Controller {
         $this->m_tables->status($id,$status,$tgl);
         redirect('Tables');
     }
+    public function restore(){
+        $id = $this->uri->segment(3);
+        $status = 'Aktif';
+        $tgl = date('Y-m-d');
+        $this->m_tables->status2($id,$status,$tgl);
+        redirect('Tables');
+    }
 
     public function Tampilsimpan()
     {
