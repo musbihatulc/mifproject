@@ -54,7 +54,7 @@ class Tables extends CI_Controller {
 		$this->load->view('auth/header.php', $data);
         $this->load->view('auth/sidebar.php');
         $this->load->view('auth/topbar.php');
-		$this->load->view('detail');
+		$this->load->view('detail', $data);
 		$this->load->view('auth/footer.php');
     }
 

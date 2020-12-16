@@ -13,6 +13,7 @@ class m_tables extends CI_Model {
     public function getAll()
     {
         $this->db->join('golongan','tm_user.Pangkat_gol_Rg=golongan.golongan');
+  
         $this->db->where('status=','Aktif');
         $this->db->order_by('golongan.id', 'DESC');
         return $this->db->get($this->table)->result();
@@ -55,8 +56,9 @@ class m_tables extends CI_Model {
     }
 
     public function detail($id){
+        $this->db->join('data_diri','tm_user.NIP=data_diri.NIP');
         return $this->db->get_where("tm_user" , [
-            'NIP' => $id
+            'tm_user.NIP' => $id
         ])->result_array();
     }
 

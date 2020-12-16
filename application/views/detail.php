@@ -175,6 +175,15 @@
                 <?= $detail['Ctt_prestasi']?></p>
             </td>
         </tr>
+        <tr>
+        <td width="200">
+                Gambar
+            </td>
+            <td width="1">:</td>
+            <td>
+                <img width="300" height="300" src="<?= base_url('assets/img/'. $detail['Gambar']) ?>" alt="">
+            </td>
+        </tr>
         <?php endforeach;?>
     </table>
     <div class="row"> 
