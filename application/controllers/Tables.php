@@ -52,7 +52,6 @@ class Tables extends CI_Controller {
 
     public function opentambah()
     {
-        $this->form_validation->set_rules('No','No','required|is_unique[tm_user.No]');
         $this->form_validation->set_rules('Nama','Nama','required');
         $this->form_validation->set_rules('NIP','NIP','required');
         $this->form_validation->set_rules('Pangkat_gol_Rg','Pangkat_gol_Rg','required');
@@ -80,7 +79,6 @@ class Tables extends CI_Controller {
                 
         } else {
             $data = array(
-                'No' => $this->input->post('No'),
                 'Nama' => $this->input->post('Nama'),
                 'NIP' => $this->input->post('NIP'),
                 'Pangkat_gol_Rg' => $this->input->post('Pangkat_gol_Rg'),

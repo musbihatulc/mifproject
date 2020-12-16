@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Grafik Jumlah Pangkat Golongan RG</title>
-    <!-- Load file plugin Chart.js -->
-    <script src="<?php echo base_url()?>/assets/Chart.js/Chart.min.js"></script>
-</head>
-<body>
-<br>
+
 
 <div class="card-body" style="max-width: 1500px;">
-<a href="<?php echo base_url(); ?>Home" class="btn btn-primary">Kembali</a>
-<!-- <a href="<?php echo base_url(); ?>C_grafik/simpanpangkat" class="btn btn-primary">Simpan Grafik</a> -->
 <h1 style="text-align:center">Grafik Jumlah Pangkat Golongan RG</h1>
 <canvas id="myChart"></canvas>
     <?php
@@ -54,5 +44,3 @@
 </script>
 
 </div>
-</body>
-</html>

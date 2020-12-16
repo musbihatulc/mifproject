@@ -54,7 +54,7 @@
                   </table>
                   <div class="mt-3">
                       <a href="<?php echo base_url(); ?>Tables/opentambah/" class="btn btn-primary">Tambah</a>
-                      <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Simpan</a>
+                      <a href="<?php echo base_url(); ?>Tables/simpan/" class="btn btn-danger">Lihat Semua Data</a>
                   </div>
               </div>
               <!-- <div class="table-responsive data-tables">

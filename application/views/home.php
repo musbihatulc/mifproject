@@ -1,10 +1,10 @@
+
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid background">
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
 
          
@@ -12,8 +12,8 @@
           <div class="row">
 
 
-          <div class="col-xl-3 col-md-6 mb-4 bg-success">
-              <div class="card border-left-success ">
+          <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-danger shadow h-100 py-2 ">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
@@ -21,6 +21,9 @@
                       <h4 class="card-title font-weight-bold">Jumlah Pegawai</h4>
                       <?php echo $Nama ?>                      
                     </div>
+                    <div class="col mr-2">
+                    <a href="#" class="btn btn-danger"  data-toggle="modal" data-target="#ModalTabel"> Usia Pegawai</a>
+</div> 
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-user-friends fa-2x text-gray-300"></i>
@@ -29,6 +32,7 @@
                 </div>
               </div>
             </div>
+          
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -38,7 +42,7 @@
                     <div class="col mr-2">
                     <div class="card-body pb-3">
                       <h4 class="card-title font-weight-bold">Tingkat Ijazah Pegawai</h4>
-                      <a href="<?php echo base_url(); ?>C_grafik/tingkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
+                      <a href="#" class="btn btn-success"  data-toggle="modal" data-target="#ModalGrafik1"> Tampilkan Grafik</a>                      
                     </div>
                     </div>
                     <div class="col-auto">
@@ -84,7 +88,7 @@
                       <!-- Card content -->
                       <div class="card-body pb-3">
                       <h4 class="card-title font-weight-bold">Pangkat Golongan Rg</h4>
-                      <a href="<?php echo base_url(); ?>C_grafik/pangkat/" class="btn btn-primary">Tampilkan Grafik</a>                      
+                      <a href="#" class="btn btn-warning"  data-toggle="modal" data-target="#ModalGrafik">Tampilkan Grafik</a>                      
                     </div>
                     </div>
                     <div class="col-auto">
@@ -95,6 +99,8 @@
               </div>
 
             </div>
+
+            
 
 
         </div>
@@ -174,8 +180,9 @@
                     <div class="col mr-2">
                       <!-- Card content -->
                       <div class="card-body pb-3">
-                      <h4 class="text-white">VISI, MISI, DAN TUJUAN KEJAKSAAN NEGERI JEMBER</h4>
+                      <h4 class="text-white text-center">VISI, MISI, DAN TUJUAN KEJAKSAAN NEGERI JEMBER</h4>
                       <br>
+                      <div class="text-justify" >
                           <p class="text-white"> VISI :
                           Visi Kejaksaan Negeri Jember mengacu pada visi Kejaksaan RI. 
                           Visi adalah suatu pandangan jauh kedepan yang akan mengarahkan kita untuk menuju 
@@ -193,6 +200,7 @@
                           4. Mewujudkan upaya Penegakan Hukum yang memenuhi rasa keadilan masyarakat;
                           5. Mempercepat pelaksanaan Reormasi Birokrasi dan Tata Kelola Kejaksaan RI yang bersih dan bebas KKN
                           </p>
+              </div>
                       </div>
                     </div>
                   </div>
@@ -200,4 +208,80 @@
               </div>
 
       </div>
+  
+<div class="modal fade bd-example-modal-xl" id="ModalGrafik1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Grafik tingkat ijazah</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php $this->load->view('grafik_ijazah.php') ?>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- End of Main Content -->
+      <!-- Modal -->
+<div class="modal fade bd-example-modal-xl" id="ModalGrafik" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Grafik pangkat</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php $this->load->view('grafik.php') ?>
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-xl" id="ModalTabel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h5 class="modal-title" id="exampleModalLabel">Tabel Usia Pegawai</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+              <table class = 'table table-bordered'>
+                <thead class = 'table-dark'>
+                  <tr>
+                    <th>Usia</th>
+                    <th>Jumlah</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>20 s.d 30</td>
+                    <td><?php echo $a ?> orang</td>
+                  </tr>
+                  <tr>
+                    <td>31 s.d 40</td>
+                    <td><?php echo $b ?> orang</td>
+                  </tr>
+                  <tr>
+                    <td>41 s.d 50</td>
+                    <td><?php echo $c ?> orang</td>
+                  </tr>
+                  <tr>
+                    <td>51 s.d 60</td>
+                    <td><?php echo $d ?> orang</td>
+                  </tr>
+                </tbody>
+              </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -57,7 +57,7 @@
                     <?php } ?>
                   </tbody>
                 </table>
-                <a href="<?php echo base_url(); ?>Tables/Tampilsimpan/" class="btn btn-danger">Simpan</a> 
+                <a href="<?php echo base_url(); ?>Tables/Tampilsimpan/" class="btn btn-danger">Cetak</a> 
                  <a href="<?php echo base_url('Tables'); ?>" class="btn btn-success">Kembali</a>
               </div>
             </div>

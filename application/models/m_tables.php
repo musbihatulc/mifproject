@@ -48,6 +48,11 @@ class m_tables extends CI_Model {
             'NIP' => $id
         ])->result_array();
     }
+    public function usia($from,$to){
+        $this->db->where('Usia BETWEEN '.$from.' AND '.$to);
+        $this->db->from('tm_user');
+        return $this->db->get();
+    } 
 
     public function hapusdata($id){
         $this->db->where('NIP' , $id);

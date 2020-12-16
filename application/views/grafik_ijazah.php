@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Grafik Tingkat Ijazah</title>
-    <!-- Load file plugin Chart.js -->
-    <script src="<?php echo base_url()?>/assets/Chart.js/Chart.min.js"></script>
-</head>
-<body>
-<br>
 <div class="card-body" style="max-width: 1500px;">
-<a href="<?php echo base_url(); ?>Home" class="btn btn-primary">Kembali</a>
-<!-- <a href="<?php echo base_url(); ?>C_grafik/SimpanIjazah" class="btn btn-success">Simpan</a>  -->
 <h1 style="text-align:center">Grafik Tingkat Ijazah</h1>
-<canvas id="myChart"></canvas>
+<canvas id="myChart1"></canvas>
     <?php
     //Inisialisasi nilai variabel awal
     $tingkat_ijazah= "";
@@ -25,7 +14,7 @@
     }
     ?>
 <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
+    var ctx = document.getElementById('myChart1').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
         type: 'pie',
@@ -53,6 +42,3 @@
 </script>
 
 </div>
-
-</body>
-</html>
