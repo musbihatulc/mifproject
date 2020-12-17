@@ -59,7 +59,7 @@
                       <td>
                         <div class="row">
                             <?php if($baris->status == 'Tidak Aktif'){  ?>
-                          <a href="<?php echo base_url(); ?>Tables/restore/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Restore</a>
+                          <a href="<?php echo base_url(); ?>Tables/restore/<?php echo $baris->NIP; ?>" type="button" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin memulihkan data?')">Restore</a>
                           <?php }else{ ?>
                             <p>Data Aktif</p>
                             <?php } ?>
