@@ -1,4 +1,4 @@
-
+<h1 style="text-align:center">Grafik Jumlah Pangkat Golongan RG</h1>
 <canvas id="myChart"></canvas>
 <?php
     //Inisialisasi nilai variabel awal

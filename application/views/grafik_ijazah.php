@@ -1,4 +1,4 @@
-
+<h1 style="text-align:center">Grafik Tingkat Ijazah</h1>
 <canvas id="myChart1"></canvas>
             <?php
     //Inisialisasi nilai variabel awal
