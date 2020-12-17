@@ -42,7 +42,8 @@ class Home extends CI_Controller {
 		$data['b'] = $this->m_tables->usia('31','40')->num_rows();
 		$data['c'] = $this->m_tables->usia('41','50')->num_rows();
 		$data['d'] = $this->m_tables->usia('51','60')->num_rows();
-		$data['Nama'] = $this->db->from("tm_user")->get()->num_rows();
+		$data['Nama'] = $this->db->query("SELECT*FROM tm_user WHERE `status` = 'Aktif' ")->num_rows();
+		// $this->db->query->("select * from tm_user where 'status=','Aktif'")->num_rows();
 		$this->load->view('auth/header.php',$data);
         $this->load->view('auth/sidebar.php');
         $this->load->view('auth/topbar.php');
